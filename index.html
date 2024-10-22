@@ -3,154 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポップなホームページ</title>
+    <title>SAT BOT</title>
     <style>
-        /* General styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Yu Gothic', Meiryo, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffe4e1;
+            background-color: #f4f4f4;
             color: #333;
+        }
+
+        * {
+            font-family: 'Yu Gothic', Meiryo, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(90deg, #CE005B, #FFEB3B); /* ピンクからレモン色のグラデーション */
+            color: #fff;
+            padding: 20px;
             text-align: center;
         }
 
-        h1, h2, h3 {
-            color: #ff4081;
-            font-family: 'Comic Sans MS', cursive;
+        header h1 {
+            margin: 0;
+            font-size: 2em;
         }
 
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #ff4081;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 20px 0;
+            background-image: url('6.webp'); /* 背景画像を追加 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; /* 画像が繰り返されないようにする */
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* 立体感のある文字 */
+        }
+
+        .intro h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
             color: white;
+            text-shadow: 1px 1px 2px black, 
+                -1px -1px 2px black,  
+                1px -1px 2px black,
+                -1px 1px 2px black;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Hero section */
-        .hero {
-            background-color: #ff80ab;
-            padding: 50px 20px;
-        }
-
-        .hero h2 {
-            font-size: 2.5em;
-        }
-
-        .hero p {
+        .intro p {
             font-size: 1.2em;
-            margin: 20px 0;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 1px 1px 2px black, 
+                -1px -1px 2px black,  
+                1px -1px 2px black,
+                -1px 1px 2px black;
         }
 
-        .cta-button {
-            background-color: #ff4081;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease;
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
         }
 
-        .cta-button:hover {
-            background-color: #ff80ab;
-        }
-
-        /* Features section */
-        .features {
-            background-color: #ffe4e1;
-            padding: 50px 0;
-        }
-
-        .features h3 {
-            margin-bottom: 40px;
-        }
-
-        .feature-box {
+        .service {
             background-color: #fff;
             padding: 20px;
-            margin: 20px;
-            display: inline-block;
-            width: 250px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(33% - 20px);
+            min-width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー効果のためのトランジション */
         }
 
-        .feature-box h4 {
-            font-size: 1.5em;
-            color: #ff4081;
+        .service:hover {
+            transform: translateY(-10px); /* ホバー時に少し上に浮かぶ */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウを強調 */
         }
 
-        .feature-box p {
+        .service h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .service p {
             font-size: 1em;
             color: #666;
         }
 
-        /* Footer */
-        footer {
-            background-color: #ff4081;
-            color: white;
-            padding: 20px;
+        .center-container {
+            text-align: center; /* 親要素で中央寄せ */
             margin-top: 20px;
+        }
+
+        .custom-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #CE005B, #FFEB3B); /* ピンクからレモン色のグラデーション */
+            border: 2px solid transparent; /* ボーダーを透明にして目立たせない */
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .custom-link:hover {
+            background-color: #ffeb3b; /* ホバー時はボタンが黄色になる */
+            color: #CE005B; /* テキストはピンクになる */
+        }
+
+        footer {
+            background: linear-gradient(90deg, #CE005B, #FFEB3B); /* ピンクからレモン色のグラデーション */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* メディアクエリでスマホ対応 */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                flex-basis: 100%;
+                max-width: 400px;
+            }
+        }
+
+        /* 常時右下表示 */
+        .fixed-image {
+            position: fixed;
+            bottom: 50px; /* 画面下からの距離 */
+            right: 100px; /* 画面右からの距離 */
+            width: 400px; /* 画像の横幅をさらに大きく */
+            height: auto; /* 自動で高さを調整 */
+            z-index: 1000; /* 他の要素より前面に表示 */
+        }
+
+        /* 背景画像を動画の後ろには表示しない */
+        video {
+            background: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Pop Website!</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h2>Catchy Headline</h2>
-        <p>Make your day pop with bright and exciting web designs!</p>
-        <a href="#" class="cta-button">Get Started!</a>
+<header>
+    <h1>株式会社エスエーティ | 産業交流展2024</h1>
+</header>
+
+<div class="container">
+    <section class="intro">
+        <h2>IT total solution  Company</h2>
+        <p><strong>弊社では、お客様の社内システムの設計・構築から保守まで、ITライフサイクル全般を支援いたします。<br>
+            設計・構築サービスでは、お客様のご要望に沿った機器の導入およびシステムの構築を行っております。<br>
+            また、第三者保守サービスではメーカーサポートが終了したIT機器を長期間にわたり安心してご使用いただけるよう支援いたします。<br>
+            まずはお気軽にお問い合わせください。</strong></p>
     </section>
-
-    <section class="features">
-        <h3>Features</h3>
-        <div class="feature-box">
-            <h4>Bright Colors</h4>
-            <p>Our designs stand out with bold, vibrant colors.</p>
+    <br>
+    <section class="services">
+        <div class="service">
+            <h3>第三者保守</h3>
+            <p>エスエーティでは、創業以来培ってきた高品質の保守技術により、メーカーによる保守提供中・提供終了後にかかわらず、ハードウェア・ネットワーク機器の保守サービスをご提供できます。</p>
         </div>
-        <div class="feature-box">
-            <h4>Fun Fonts</h4>
-            <p>Choose from a variety of fun, playful fonts.</p>
+        <div class="service">
+            <h3>システム設計</h3>
+            <p>エスエーティでは、ITメーカーや大手SIerを経験した技術者で構成されたシステム設計・構築専門の部門があり、お客様のお困りごととなる要件の定義から、基本設計、詳細設計などシステム設計を請け負っております。</p>
         </div>
-        <div class="feature-box">
-            <h4>Responsive Design</h4>
-            <p>Looks great on any device, big or small!</p>
+        <div class="service">
+            <h3>システム構築</h3>
+            <p>エスエーティでは、ハードウェア製品の検品・キッティングから結合テストまでのシステム構築サービスを、経験豊富なエンジニアを統括者としたチーム体制にてご提供いたします。</p>
+        </div>
+        <div class="service">
+            <h3>システム運用</h3>
+            <p>エスエーティでは、自社コールセンター及び障害解析部隊、システム設計構築部隊、保守技術部隊があり、各部隊が連携して運用管理代行や､リモート監視環境の構築～オンサイト保守までの一貫したサービスをご提供しております。</p>
         </div>
     </section>
+    <div class="center-container">
+        <a href="https://www.sat-corp.jp/contact" class="custom-link">お問い合わせはこちら</a>
+    </div>
 
-    <footer>
-        <p>© 2024 Pop Website. All rights reserved.</p>
-    </footer>
+</div>
+
+<img src="image1.png" alt="右下に固定表示される画像" class="fixed-image">
+
+<footer>
+    <p>&copy; 2024 株式会社エスエーティ. All Rights Reserved.</p>
+</footer>
+
 </body>
+
+<script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/oversea/index.js"></script>
+<script>
+    new CozeWebSDK.WebChatClient({
+      config: {
+        bot_id: '7418849050369458183',
+      },
+      componentProps: {
+        title: 'SAT BOT',icon:'https://www.sat-corp.jp/hubfs/Image/favicon.ico'
+      },
+    });
+</script>
 </html>
